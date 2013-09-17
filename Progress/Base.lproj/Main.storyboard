@@ -91,10 +91,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-xS-eVA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-xS-eVA" userLabel="Content">
                                 <rect key="frame" x="10" y="40" width="300" height="508"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnS-Jo-2rG" userLabel="headerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNn-F5-PFj" userLabel="Title - Activities">
+                                                <rect key="frame" x="17" y="15" width="266" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                <color key="textColor" red="0.17647058823529413" green="0.49019607843137253" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2D-1E-1dC" userLabel="Subtitle - 0 items">
+                                                <rect key="frame" x="17" y="56" width="266" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <color key="textColor" red="0.17647058823529413" green="0.49019607843137253" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTV-pz-vcA" userLabel="ButtomLine">
+                                                <rect key="frame" x="17" y="73" width="266" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="rTz-oh-cBn"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="gNn-F5-PFj" firstAttribute="leading" secondItem="YnS-Jo-2rG" secondAttribute="leading" constant="17" id="0wH-1n-QNR"/>
+                                            <constraint firstItem="UTV-pz-vcA" firstAttribute="trailing" secondItem="Z2D-1E-1dC" secondAttribute="trailing" id="BC0-ww-NOP"/>
+                                            <constraint firstAttribute="bottom" secondItem="UTV-pz-vcA" secondAttribute="bottom" id="CaS-XZ-Qul"/>
+                                            <constraint firstItem="gNn-F5-PFj" firstAttribute="leading" secondItem="Z2D-1E-1dC" secondAttribute="leading" id="IhD-hZ-QMy"/>
+                                            <constraint firstItem="gNn-F5-PFj" firstAttribute="top" secondItem="YnS-Jo-2rG" secondAttribute="top" constant="15" id="L5I-B6-POK"/>
+                                            <constraint firstItem="UTV-pz-vcA" firstAttribute="top" secondItem="Z2D-1E-1dC" secondAttribute="bottom" constant="3" id="Xfs-3y-Ba2"/>
+                                            <constraint firstItem="Z2D-1E-1dC" firstAttribute="top" secondItem="gNn-F5-PFj" secondAttribute="bottom" constant="6" id="hhV-Se-7VC"/>
+                                            <constraint firstItem="UTV-pz-vcA" firstAttribute="leading" secondItem="Z2D-1E-1dC" secondAttribute="leading" id="rnS-Kr-FPr"/>
+                                            <constraint firstAttribute="trailing" secondItem="gNn-F5-PFj" secondAttribute="trailing" constant="17" id="z3u-9c-Avo"/>
+                                            <constraint firstItem="gNn-F5-PFj" firstAttribute="trailing" secondItem="Z2D-1E-1dC" secondAttribute="trailing" id="zKY-M7-TU7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="YnS-Jo-2rG" firstAttribute="leading" secondItem="6OC-xS-eVA" secondAttribute="leading" id="CSL-O0-NjR"/>
+                                    <constraint firstItem="YnS-Jo-2rG" firstAttribute="top" secondItem="6OC-xS-eVA" secondAttribute="top" id="NvX-aT-7dK"/>
+                                    <constraint firstAttribute="trailing" secondItem="YnS-Jo-2rG" secondAttribute="trailing" id="a1G-jS-SQs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,7 +212,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOU-K0-66j">
                                 <rect key="frame" x="10" y="40" width="300" height="508"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -19,7 +19,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
-    self.contentView.backgroundColor = [UIColor whiteColor];
     self.contentView.layer.cornerRadius = 10.f;
     self.contentView.layer.shadowOffset = CGSizeMake(0, 0);
     self.contentView.layer.shadowColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
