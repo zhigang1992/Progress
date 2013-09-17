@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0433979617E87D88003613CB /* KFActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979517E87D88003613CB /* KFActivityViewController.m */; };
+		0433979917E87DB8003613CB /* KFEgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979817E87DB8003613CB /* KFEgentViewController.m */; };
+		0433979C17E87E19003613CB /* KFCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979B17E87E19003613CB /* KFCenterViewController.m */; };
+		0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979E17E88DF1003613CB /* KFBaseViewController.m */; };
+		043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B19B117E87BCB0074ACDC /* KFSideViewController.m */; };
 		04A33BB017E8777B00A4BACD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BAF17E8777B00A4BACD /* Foundation.framework */; };
 		04A33BB217E8777B00A4BACD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BB117E8777B00A4BACD /* CoreGraphics.framework */; };
 		04A33BB417E8777B00A4BACD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BB317E8777B00A4BACD /* UIKit.framework */; };
@@ -34,6 +39,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0433979417E87D88003613CB /* KFActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFActivityViewController.h; sourceTree = "<group>"; };
+		0433979517E87D88003613CB /* KFActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFActivityViewController.m; sourceTree = "<group>"; };
+		0433979717E87DB8003613CB /* KFEgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFEgentViewController.h; sourceTree = "<group>"; };
+		0433979817E87DB8003613CB /* KFEgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFEgentViewController.m; sourceTree = "<group>"; };
+		0433979A17E87E19003613CB /* KFCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFCenterViewController.h; sourceTree = "<group>"; };
+		0433979B17E87E19003613CB /* KFCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFCenterViewController.m; sourceTree = "<group>"; };
+		0433979D17E88DF1003613CB /* KFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBaseViewController.h; sourceTree = "<group>"; };
+		0433979E17E88DF1003613CB /* KFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBaseViewController.m; sourceTree = "<group>"; };
+		043B19B017E87BCB0074ACDC /* KFSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFSideViewController.h; sourceTree = "<group>"; };
+		043B19B117E87BCB0074ACDC /* KFSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFSideViewController.m; sourceTree = "<group>"; };
 		04A33BAC17E8777B00A4BACD /* Progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A33BAF17E8777B00A4BACD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04A33BB117E8777B00A4BACD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +127,16 @@
 		04A33BB517E8777B00A4BACD /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				043B19B017E87BCB0074ACDC /* KFSideViewController.h */,
+				043B19B117E87BCB0074ACDC /* KFSideViewController.m */,
+				0433979417E87D88003613CB /* KFActivityViewController.h */,
+				0433979517E87D88003613CB /* KFActivityViewController.m */,
+				0433979717E87DB8003613CB /* KFEgentViewController.h */,
+				0433979817E87DB8003613CB /* KFEgentViewController.m */,
+				0433979A17E87E19003613CB /* KFCenterViewController.h */,
+				0433979B17E87E19003613CB /* KFCenterViewController.m */,
+				0433979D17E88DF1003613CB /* KFBaseViewController.h */,
+				0433979E17E88DF1003613CB /* KFBaseViewController.m */,
 				04A33BBE17E8777B00A4BACD /* KFAppDelegate.h */,
 				04A33BBF17E8777B00A4BACD /* KFAppDelegate.m */,
 				04A33BC117E8777B00A4BACD /* Main.storyboard */,
@@ -250,8 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0433979617E87D88003613CB /* KFActivityViewController.m in Sources */,
+				0433979C17E87E19003613CB /* KFCenterViewController.m in Sources */,
 				04A33BC617E8777B00A4BACD /* KFViewController.m in Sources */,
 				04A33BBC17E8777B00A4BACD /* main.m in Sources */,
+				0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */,
+				0433979917E87DB8003613CB /* KFEgentViewController.m in Sources */,
+				043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */,
 				04A33BC017E8777B00A4BACD /* KFAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +491,7 @@
 				04A33BE017E8777B00A4BACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04A33BE117E8777B00A4BACD /* Build configuration list for PBXNativeTarget "ProgressTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +500,7 @@
 				04A33BE317E8777B00A4BACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
