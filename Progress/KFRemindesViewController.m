@@ -22,7 +22,7 @@
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor clearColor];
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    self.buttomView.layer.cornerRadius = 10.f;
+//    self.buttomView.layer.cornerRadius = 10.f;
     self.tableView.contentInset = UIEdgeInsetsMake(80, 0, 68, 0);
 }
 

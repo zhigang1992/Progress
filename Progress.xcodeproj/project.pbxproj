@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041E5AB817E9F91200D6EBC9 /* UIView+KFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E5AB717E9F91200D6EBC9 /* UIView+KFView.m */; };
 		0433979617E87D88003613CB /* KFActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979517E87D88003613CB /* KFActivityViewController.m */; };
 		0433979917E87DB8003613CB /* KFEgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979817E87DB8003613CB /* KFEgentViewController.m */; };
 		0433979C17E87E19003613CB /* KFCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979B17E87E19003613CB /* KFCenterViewController.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041E5AB617E9F91200D6EBC9 /* UIView+KFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KFView.h"; sourceTree = "<group>"; };
+		041E5AB717E9F91200D6EBC9 /* UIView+KFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KFView.m"; sourceTree = "<group>"; };
 		0433979417E87D88003613CB /* KFActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFActivityViewController.h; sourceTree = "<group>"; };
 		0433979517E87D88003613CB /* KFActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFActivityViewController.m; sourceTree = "<group>"; };
 		0433979717E87DB8003613CB /* KFEgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFEgentViewController.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 		04A33BB517E8777B00A4BACD /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				041E5AB617E9F91200D6EBC9 /* UIView+KFView.h */,
+				041E5AB717E9F91200D6EBC9 /* UIView+KFView.m */,
 				0441F38417E9BC4700DB62EE /* KFRemindesViewController.h */,
 				0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */,
 				04A33BC117E8777B00A4BACD /* Main.storyboard */,
@@ -320,6 +325,7 @@
 				04A33BC617E8777B00A4BACD /* KFViewController.m in Sources */,
 				04A33BBC17E8777B00A4BACD /* main.m in Sources */,
 				04ADCC2817E94F06005AD272 /* KFGradientView.m in Sources */,
+				041E5AB817E9F91200D6EBC9 /* UIView+KFView.m in Sources */,
 				0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */,
 				0433979917E87DB8003613CB /* KFEgentViewController.m in Sources */,
 				043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */,
