@@ -10,6 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface KFCenterViewController ()
+@property (weak, nonatomic) IBOutlet UIView *mainContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *contentViewForClipingBounds;
 @end
 
 @implementation KFCenterViewController
@@ -17,8 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+    
     self.contentView.layer.shadowOffset = CGSizeMake(0, -1);
+    self.contentViewForClipingBounds.layer.cornerRadius = 10.f;
+    self.contentViewForClipingBounds.clipsToBounds = YES;
+    
+    [self.mainContentView removeConstraint:self.mainContentViewHeightConstraint];
+    [self.contentViewForClipingBounds addConstraint:[NSLayoutConstraint constraintWithItem:self.mainContentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.contentViewForClipingBounds attribute:NSLayoutAttributeHeight multiplier:1 constant:-60-80]];
 }
 
 - (void)didReceiveMemoryWarning

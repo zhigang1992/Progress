@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface KFOnePixelLine : UIView
-
+@property (nonatomic) BOOL drawOnTop;
 @end

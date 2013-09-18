@@ -14,9 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *scrollViewContentView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) UIViewController *leftViewController;
-@property (weak, nonatomic) UIViewController *centerViewController;
-@property (weak, nonatomic) UIViewController *rightViewController;
+@property (strong, nonatomic) UIViewController *leftViewController;
+@property (strong, nonatomic) UIViewController *centerViewController;
+@property (strong, nonatomic) UIViewController *rightViewController;
 @property (strong, nonatomic) NSLayoutConstraint *leftCenterConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *rightCenterConstraint;
 @end

@@ -21,7 +21,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    
     [self.view removeConstraints:@[self.stupidGuideButtom, self.stupidGuideTop]];
     NSDictionary *viewDictionary = @{@"Content": self.contentView};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[Content]-20-|" options:0 metrics:nil views:viewDictionary]];

@@ -9,4 +9,8 @@
 #import "KFBaseViewController.h"
 
 @interface KFSideViewController : KFBaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *footLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
