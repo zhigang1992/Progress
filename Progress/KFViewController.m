@@ -123,4 +123,16 @@
     self.scrollView.scrollEnabled = YES;
 }
 
+- (void)centerViewWillShowButtomView:(KFCenterViewController *)sender
+{
+    self.statusBarShadowView.hidden = NO;
+    self.scrollView.scrollEnabled = NO;
+}
+
+- (void)centerViewDidFinishShowingButtomView:(KFCenterViewController *)sender
+{
+    self.statusBarShadowView.hidden = YES;
+    self.scrollView.scrollEnabled = YES;
+}
+
 @end
