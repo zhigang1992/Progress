@@ -8,6 +8,14 @@
 
 #import "KFBaseViewController.h"
 
-@interface KFCenterViewController : KFBaseViewController
+@class KFCenterViewController;
 
+@protocol KFCenterViewControllerDelegate <NSObject>
+- (void)centerViewWillShowTopView:(KFCenterViewController *)sender;
+- (void)centerViewDidFinishShowingTopView:(KFCenterViewController *)sender;
+- (BOOL)centerViewShouldShowTopView:(KFCenterViewController *)sender;
+@end
+
+@interface KFCenterViewController : KFBaseViewController
+@property (nonatomic, weak) id <KFCenterViewControllerDelegate> delegate;
 @end

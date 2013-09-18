@@ -7,8 +7,9 @@
 //
 
 #import "KFViewController.h"
+#import "KFCenterViewController.h"
 
-@interface KFViewController () <UIScrollViewDelegate>
+@interface KFViewController () <UIScrollViewDelegate, KFCenterViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *statusBarShadowView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingSpaceOfContentViewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewContentHeightConstrait;
@@ -50,6 +51,7 @@
     [self.contentView addSubview:self.centerViewController.view];
     [self.centerViewController didMoveToParentViewController:self];
     
+    [(KFCenterViewController *)self.centerViewController setDelegate:self];
     
     NSDictionary *viewDictionary = @{@"left": self.leftViewController.view,
                                      @"center": self.centerViewController.view,
@@ -69,7 +71,7 @@
 {
     [super viewDidLayoutSubviews];
     self.scrollView.contentSize = CGSizeMake(960, CGRectGetHeight(self.scrollView.frame));
-    self.scrollView.contentOffset = CGPointMake(320, 0);    
+    self.scrollView.contentOffset = CGPointMake(320, 0);
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,6 +105,22 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationPortrait;
+}
+
+//KFCenterViewControllerDelegate
+- (BOOL)centerViewShouldShowTopView:(KFCenterViewController *)sender
+{
+    return (self.scrollView.contentOffset.x == 320);
+}
+
+- (void)centerViewWillShowTopView:(KFCenterViewController *)sender
+{
+    self.scrollView.scrollEnabled = NO;
+}
+
+- (void)centerViewDidFinishShowingTopView:(KFCenterViewController *)sender
+{
+    self.scrollView.scrollEnabled = YES;
 }
 
 @end
