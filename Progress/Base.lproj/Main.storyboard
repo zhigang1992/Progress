@@ -53,6 +53,22 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="kCb-X5-XuT"/>
                                 </connections>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-aO-aPT" userLabel="StatusBarShadow" customClass="KFGradientView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jUi-r1-KbW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.40392156862745099" green="0.40392156862745099" blue="0.40392156862745099" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttomColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,10 +77,13 @@
                             <constraint firstAttribute="trailing" secondItem="gp0-20-WUm" secondAttribute="trailing" id="On8-68-NhM"/>
                             <constraint firstItem="Vk1-j2-AFF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TbU-Wo-npt"/>
                             <constraint firstAttribute="trailing" secondItem="Vk1-j2-AFF" secondAttribute="trailing" id="WP3-7p-6Q8"/>
+                            <constraint firstItem="fCy-aO-aPT" firstAttribute="leading" secondItem="Vk1-j2-AFF" secondAttribute="leading" id="YLp-Oh-VBu"/>
+                            <constraint firstItem="fCy-aO-aPT" firstAttribute="trailing" secondItem="Vk1-j2-AFF" secondAttribute="trailing" id="aKL-mP-6Gn"/>
                             <constraint firstItem="gp0-20-WUm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="aSI-oh-wjd"/>
                             <constraint firstItem="Vk1-j2-AFF" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="htp-Wn-EYv"/>
                             <constraint firstItem="bXG-gT-TGE" firstAttribute="top" secondItem="gp0-20-WUm" secondAttribute="bottom" id="mSh-dg-Y4K"/>
                             <constraint firstItem="bXG-gT-TGE" firstAttribute="top" secondItem="Vk1-j2-AFF" secondAttribute="bottom" id="om7-3N-liN"/>
+                            <constraint firstItem="fCy-aO-aPT" firstAttribute="top" secondItem="Vk1-j2-AFF" secondAttribute="top" id="xm6-gr-9u3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,6 +92,7 @@
                         <outlet property="scrollView" destination="gp0-20-WUm" id="0w3-KU-RQB"/>
                         <outlet property="scrollViewContentHeightConstrait" destination="gr4-c8-cvx" id="ycg-e2-JeD"/>
                         <outlet property="scrollViewContentView" destination="pn8-Y7-01G" id="Rmb-uX-MAM"/>
+                        <outlet property="statusBarShadowView" destination="fCy-aO-aPT" id="k75-35-dXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -558,6 +578,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="320" height="568"/>
         <image name="Background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

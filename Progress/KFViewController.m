@@ -9,6 +9,7 @@
 #import "KFViewController.h"
 
 @interface KFViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *statusBarShadowView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingSpaceOfContentViewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewContentHeightConstrait;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
