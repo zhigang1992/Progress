@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet KFProgressCircleView *mainProgressView;
 @property (nonatomic, getter = isShowingDropDownView) BOOL showingDropDownView;
 @property (nonatomic, getter = isShowingReminderView) BOOL showingReminderView;
-@property (weak, nonatomic) KFRemindesViewController *remindersViewController;
+@property (strong, nonatomic) KFRemindesViewController *remindersViewController;
 @property (nonatomic) CGFloat dropDownHight;
 @property (nonatomic) CGFloat reminderHight;
 @end
@@ -59,7 +59,7 @@
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     panGesture.delegate = self;
     panGesture.delaysTouchesBegan = YES;
-    [self.contentView addGestureRecognizer:panGesture];
+    [self.contentViewForClipingBounds addGestureRecognizer:panGesture];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -96,7 +96,7 @@
 - (void)setDropDownHight:(CGFloat)dropDownHight
 {
     
-    dropDownHight = MAX(0, dropDownHight);
+    dropDownHight = MIN(450, MAX(0, dropDownHight));
     
     if (self.dropDownHeightConstraint.constant == dropDownHight) {
         return;
@@ -121,7 +121,7 @@
 
 - (void)setReminderHight:(CGFloat)reminderHight
 {
-    reminderHight = MAX(0, reminderHight);
+    reminderHight = MIN(CGRectGetHeight(self.contentView.frame), MAX(0, reminderHight));
     
     if (self.mainContentViewTopConstraint.constant == -reminderHight) {
         return;
@@ -150,7 +150,7 @@
     }
 
     CGFloat dropDownViewThroughtHold = CGRectGetHeight(self.mainContentView.frame) * 370/408;
-    CGFloat reminderViewThroughtHold = 488;
+    CGFloat reminderViewThroughtHold = CGRectGetHeight(self.contentView.frame) - 80 + 20;
 
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
@@ -167,7 +167,9 @@
                 }
                 else {
                     if (dropViewHeight > dropDownViewThroughtHold) {
-                        dropViewHeight += transition.y / 2.5f;
+                        CGFloat extraSpace = 450.f - 370.f;
+                        CGFloat spaceLeft = dropDownViewThroughtHold + extraSpace - dropViewHeight;
+                        dropViewHeight += transition.y * spaceLeft / extraSpace;
                     }
                     else {
                         dropViewHeight += transition.y;
@@ -179,7 +181,9 @@
                 }
                 else {
                     if (reminderHeight > reminderViewThroughtHold) {
-                        reminderHeight -= transition.y / 3.0;
+                        CGFloat extraSpace = 80.f;
+                        CGFloat spaceLeft = reminderViewThroughtHold + extraSpace - reminderHeight;
+                        reminderHeight -= transition.y * spaceLeft / extraSpace;
                     }
                     else {
                         reminderHeight -= transition.y;
@@ -203,12 +207,12 @@
             BOOL shouldShowReminderView;
             
             if (self.dropDownHight) {
-                shouldShowDropDownView = velocity.y >0;
+                shouldShowDropDownView = velocity.y > 100;
                 duration = (shouldShowDropDownView ? fabs(dropDownViewThroughtHold - self.dropDownHight) : self.dropDownHight) / (dropDownViewThroughtHold * 2.f);
                 shouldShowReminderView = NO;
             }
             else {
-                shouldShowReminderView = velocity.y <0;
+                shouldShowReminderView = velocity.y < -100;
                 duration = (shouldShowReminderView ? fabs(reminderViewThroughtHold - self.reminderHight) : self.reminderHight) / (reminderViewThroughtHold * 2.f);
                 shouldShowDropDownView = NO;
             }

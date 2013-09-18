@@ -48,9 +48,9 @@
 }
 
 - (void)updateStrokeColorsWithTopColorAndButtomColor{
-    float topRed, topGreen, topBlue, topAlpha;
-    float buttomRed, buttomGreen, buttomBlue, buttomAlpha;
-    float strokeRed, strokeGreen, strokeBlue, strokeAlpha;
+    CGFloat topRed, topGreen, topBlue, topAlpha;
+    CGFloat buttomRed, buttomGreen, buttomBlue, buttomAlpha;
+    CGFloat strokeRed, strokeGreen, strokeBlue, strokeAlpha;
     if ([self.topColor getRed:&topRed green:&topGreen blue:&topBlue alpha:&topAlpha]) {
         if ([self.buttomColor getRed:&buttomRed green:&buttomGreen blue:&buttomBlue alpha:&buttomAlpha]) {
             strokeRed = (topRed + buttomRed) / 2.f;
@@ -58,7 +58,7 @@
             strokeBlue = (topBlue + buttomBlue) / 2.f;
             strokeAlpha = (topAlpha + buttomAlpha) / 2.f;
             
-            float darkenRadio = 0.2f;
+            CGFloat darkenRadio = 0.2f;
             
             self.strokeColor = [UIColor colorWithRed:MAX(strokeRed - darkenRadio, 0) green:MAX(strokeGreen - darkenRadio, 0) blue:MAX(strokeBlue - darkenRadio, 0) alpha:strokeAlpha];
             self.strokeColorLight = [UIColor colorWithRed:strokeRed green:strokeGreen blue:strokeBlue alpha:strokeAlpha / 2.f];
