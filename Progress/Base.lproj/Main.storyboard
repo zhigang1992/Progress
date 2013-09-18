@@ -291,6 +291,11 @@
                                             <constraint firstAttribute="height" priority="869" constant="20" id="h36-1c-6zT"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cl6-BM-mWy" userLabel="contentViewForShadowing">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1i-7H-4lD" userLabel="contentViewClipingView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -606,10 +611,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="n1i-7H-4lD" firstAttribute="top" secondItem="Cl6-BM-mWy" secondAttribute="top" id="034-KE-J33"/>
                                     <constraint firstItem="n1i-7H-4lD" firstAttribute="top" secondItem="dR8-I1-vaS" secondAttribute="top" id="JH9-d2-k3D"/>
                                     <constraint firstAttribute="height" secondItem="vNN-FH-nAJ" secondAttribute="height" id="L6O-cN-67S"/>
+                                    <constraint firstItem="Cl6-BM-mWy" firstAttribute="leading" secondItem="dR8-I1-vaS" secondAttribute="leading" id="Z4W-IF-RS2"/>
                                     <constraint firstItem="n1i-7H-4lD" firstAttribute="leading" secondItem="dR8-I1-vaS" secondAttribute="leading" id="dH4-ib-LdP"/>
                                     <constraint firstAttribute="trailing" secondItem="IEZ-FE-2QP" secondAttribute="trailing" id="h2v-jY-cmW"/>
+                                    <constraint firstItem="n1i-7H-4lD" firstAttribute="bottom" secondItem="Cl6-BM-mWy" secondAttribute="bottom" id="lOg-t5-oxk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cl6-BM-mWy" secondAttribute="trailing" id="m8E-DX-f6v"/>
                                     <constraint firstAttribute="bottom" secondItem="IEZ-FE-2QP" secondAttribute="bottom" id="p3W-GD-jjT"/>
                                     <constraint firstAttribute="trailing" secondItem="n1i-7H-4lD" secondAttribute="trailing" id="rAB-5d-cmg"/>
                                     <constraint firstItem="IEZ-FE-2QP" firstAttribute="leading" secondItem="dR8-I1-vaS" secondAttribute="leading" id="y0O-HR-TZg"/>
@@ -626,8 +635,9 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageForReminderView" destination="IEZ-FE-2QP" id="i36-9f-w8P"/>
-                        <outlet property="contentView" destination="dR8-I1-vaS" id="vmQ-7A-tLP"/>
+                        <outlet property="contentView" destination="dR8-I1-vaS" id="g4J-Zp-qlA"/>
                         <outlet property="contentViewForClipingBounds" destination="n1i-7H-4lD" id="iLY-gR-GVY"/>
+                        <outlet property="contentViewForShadowing" destination="Cl6-BM-mWy" id="O0V-Qh-0Uc"/>
                         <outlet property="dropDownHeightConstraint" destination="8uP-Ul-os3" id="8Af-eN-b3q"/>
                         <outlet property="dropDownView" destination="fnP-Ye-3P2" id="zCo-fi-tLV"/>
                         <outlet property="mainContentView" destination="v79-kw-9sf" id="wPB-CI-cmg"/>
@@ -771,8 +781,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="320" height="568"/>
-        <image name="Background" width="320" height="568"/>
         <image name="Background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

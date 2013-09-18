@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Kyle Fang. All rights reserved.
 //
 
-#import "KFBaseViewController.h"
+#import <UIKit/UIKit.h>
 
 @class KFCenterViewController;
 
@@ -20,6 +20,6 @@
 - (void)centerViewDidFinishShowingButtomView:(KFCenterViewController *)sender;
 @end
 
-@interface KFCenterViewController : KFBaseViewController
+@interface KFCenterViewController : UIViewController
 @property (nonatomic, weak) id <KFCenterViewControllerDelegate> delegate;
 @end

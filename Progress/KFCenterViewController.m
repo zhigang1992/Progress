@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface KFCenterViewController () <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageForReminderView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewTopConstraint;
 @property (weak, nonatomic) IBOutlet UIView *dropDownView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *contentViewForClipingBounds;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dropDownHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *contentViewForShadowing;
 @property (weak, nonatomic) IBOutlet KFProgressCircleView *mainProgressView;
 @property (nonatomic, getter = isShowingDropDownView) BOOL showingDropDownView;
 @property (nonatomic, getter = isShowingReminderView) BOOL showingReminderView;
@@ -36,6 +38,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
+    
     self.contentView.layer.shadowOffset = CGSizeMake(0, -1);
     self.contentViewForClipingBounds.layer.cornerRadius = 10.f;
     self.contentViewForClipingBounds.clipsToBounds = YES;
@@ -47,7 +52,7 @@
     
     self.remindersViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KFRemindesViewController"];
     [self.remindersViewController willMoveToParentViewController:self];
-    [self.contentView insertSubview:self.remindersViewController.view belowSubview:self.contentViewForClipingBounds];
+    [self.contentView insertSubview:self.remindersViewController.view belowSubview:self.contentViewForShadowing];
     [self.remindersViewController didMoveToParentViewController:self];
     
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.remindersViewController.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeHeight multiplier:1 constant:20]];
@@ -60,11 +65,18 @@
     panGesture.delegate = self;
     panGesture.delaysTouchesBegan = YES;
     [self.contentViewForClipingBounds addGestureRecognizer:panGesture];
+    
+    self.contentViewForShadowing.layer.cornerRadius = 10.f;
+    self.contentViewForShadowing.layer.shadowOffset = CGSizeMake(0, 0);
+    self.contentViewForShadowing.layer.shadowColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
+    self.contentViewForShadowing.layer.shadowOpacity = 1;
+    self.contentViewForShadowing.layer.shadowRadius = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.contentViewForShadowing.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.contentViewForShadowing.frame cornerRadius:10.f].CGPath;
 }
 
 - (void)didReceiveMemoryWarning
