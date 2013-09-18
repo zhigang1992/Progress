@@ -660,9 +660,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <view key="tableHeaderView" contentMode="scaleToFill" id="Wkv-Rz-BKy" customClass="KFOnePixelLine">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="drawOnTop" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reminder" textLabel="4Tx-RO-pQK" style="IBUITableViewCellStyleDefault" id="5Fd-YK-OrZ">
-                                                <rect key="frame" x="0.0" y="22" width="300" height="44"/>
+                                                <rect key="frame" x="0.0" y="23" width="300" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fd-YK-OrZ" id="d5L-cB-qlo">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -671,7 +680,7 @@
                                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Tx-RO-pQK">
                                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -686,7 +695,7 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bq0-an-GKJ" secondAttribute="trailing" id="2xk-oO-8fI"/>
                                     <constraint firstItem="bq0-an-GKJ" firstAttribute="leading" secondItem="Y8I-1u-TID" secondAttribute="leading" id="M3w-m9-ovF"/>
@@ -697,7 +706,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-KS-IIU" userLabel="FootView">
                                 <rect key="frame" x="0.0" y="500" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="AGK-R8-4q8"/>
                                 </constraints>
