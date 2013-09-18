@@ -13,6 +13,7 @@
 		0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979E17E88DF1003613CB /* KFBaseViewController.m */; };
 		043397A217E89AD6003613CB /* KFOnePixelLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 043397A117E89AD6003613CB /* KFOnePixelLine.m */; };
 		043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B19B117E87BCB0074ACDC /* KFSideViewController.m */; };
+		0441F38617E9BC4700DB62EE /* KFRemindesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */; };
 		04A33BB017E8777B00A4BACD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BAF17E8777B00A4BACD /* Foundation.framework */; };
 		04A33BB217E8777B00A4BACD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BB117E8777B00A4BACD /* CoreGraphics.framework */; };
 		04A33BB417E8777B00A4BACD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BB317E8777B00A4BACD /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		043397A117E89AD6003613CB /* KFOnePixelLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFOnePixelLine.m; sourceTree = "<group>"; };
 		043B19B017E87BCB0074ACDC /* KFSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFSideViewController.h; sourceTree = "<group>"; };
 		043B19B117E87BCB0074ACDC /* KFSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFSideViewController.m; sourceTree = "<group>"; };
+		0441F38417E9BC4700DB62EE /* KFRemindesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFRemindesViewController.h; sourceTree = "<group>"; };
+		0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFRemindesViewController.m; sourceTree = "<group>"; };
 		04A33BAC17E8777B00A4BACD /* Progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A33BAF17E8777B00A4BACD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		04A33BB117E8777B00A4BACD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 		04A33BB517E8777B00A4BACD /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				0441F38417E9BC4700DB62EE /* KFRemindesViewController.h */,
+				0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */,
 				04A33BC117E8777B00A4BACD /* Main.storyboard */,
 				04A33BC417E8777B00A4BACD /* KFViewController.h */,
 				04A33BC517E8777B00A4BACD /* KFViewController.m */,
@@ -310,6 +315,7 @@
 				043397A217E89AD6003613CB /* KFOnePixelLine.m in Sources */,
 				04ADCC2B17E95445005AD272 /* KFArrawLineView.m in Sources */,
 				0433979C17E87E19003613CB /* KFCenterViewController.m in Sources */,
+				0441F38617E9BC4700DB62EE /* KFRemindesViewController.m in Sources */,
 				04ADCC3117E99C86005AD272 /* KFProgressCircleView.m in Sources */,
 				04A33BC617E8777B00A4BACD /* KFViewController.m in Sources */,
 				04A33BBC17E8777B00A4BACD /* main.m in Sources */,

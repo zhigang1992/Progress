@@ -108,7 +108,7 @@
 }
 
 //KFCenterViewControllerDelegate
-- (BOOL)centerViewShouldShowTopView:(KFCenterViewController *)sender
+- (BOOL)centerViewShouldShowTopViewOrButtomView:(KFCenterViewController *)sender
 {
     return (self.scrollView.contentOffset.x == 320);
 }

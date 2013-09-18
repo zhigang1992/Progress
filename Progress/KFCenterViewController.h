@@ -13,7 +13,7 @@
 @protocol KFCenterViewControllerDelegate <NSObject>
 - (void)centerViewWillShowTopView:(KFCenterViewController *)sender;
 - (void)centerViewDidFinishShowingTopView:(KFCenterViewController *)sender;
-- (BOOL)centerViewShouldShowTopView:(KFCenterViewController *)sender;
+- (BOOL)centerViewShouldShowTopViewOrButtomView:(KFCenterViewController *)sender;
 @end
 
 @interface KFCenterViewController : KFBaseViewController

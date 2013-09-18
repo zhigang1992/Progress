@@ -8,9 +8,11 @@
 
 #import "KFCenterViewController.h"
 #import "KFProgressCircleView.h"
+#import "KFRemindesViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface KFCenterViewController () <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewTopConstraint;
 @property (weak, nonatomic) IBOutlet UIView *dropDownView;
 @property (weak, nonatomic) IBOutlet UIView *mainContentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewHeightConstraint;
@@ -18,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dropDownHeightConstraint;
 @property (weak, nonatomic) IBOutlet KFProgressCircleView *mainProgressView;
 @property (nonatomic, getter = isShowingDropDownView) BOOL showingDropDownView;
+@property (weak, nonatomic) KFRemindesViewController *remindersViewController;
 @end
 
 @implementation KFCenterViewController
@@ -34,6 +37,16 @@
     [self.mainContentView removeConstraint:self.mainContentViewHeightConstraint];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.mainContentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeHeight multiplier:1 constant:-60-80]];
     
+    self.remindersViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"KFRemindesViewController"];
+    [self.remindersViewController willMoveToParentViewController:self];
+    [self.contentView insertSubview:self.remindersViewController.view belowSubview:self.contentViewForClipingBounds];
+    [self.remindersViewController didMoveToParentViewController:self];
+    
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.remindersViewController.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
+    NSDictionary *reminderViewDictionary = @{@"reminder": self.remindersViewController.view, @"content": self.contentViewForClipingBounds};
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[reminder]|" options:0 metrics:nil views:reminderViewDictionary]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[content]-(-60)-[reminder]" options:0 metrics:nil views:reminderViewDictionary]];
+    
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     panGesture.delegate = self;
     panGesture.delaysTouchesBegan = YES;
@@ -43,11 +56,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        self.mainProgressView.progress = 0.4f;
-    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,8 +66,8 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopView:)]) {
-        return [self.delegate centerViewShouldShowTopView:self];
+    if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopViewOrButtomView:)]) {
+        return [self.delegate centerViewShouldShowTopViewOrButtomView:self];
     }
     else {
         return YES;
@@ -74,8 +82,8 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture
 {
     
-    if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopView:)]) {
-        if (![self.delegate centerViewShouldShowTopView:self]) {
+    if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopViewOrButtomView:)]) {
+        if (![self.delegate centerViewShouldShowTopViewOrButtomView:self]) {
             return;
         }
     }
