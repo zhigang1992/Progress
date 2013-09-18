@@ -64,8 +64,6 @@
     else {
         return YES;
     }
-//    CGPoint touchPoint = [gestureRecognizer locationInView:self.contentView];
-//    return CGRectContainsPoint(CGRectInset(self.contentView.frame, 10, 0), touchPoint);
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
@@ -82,7 +80,7 @@
         }
     }
     
-    CGFloat dropDownViewThroughtHold = CGRectGetHeight(self.mainContentView.frame) - 38;
+    CGFloat dropDownViewThroughtHold = CGRectGetHeight(self.mainContentView.frame) * 370/408;
     
     
     switch (gesture.state) {

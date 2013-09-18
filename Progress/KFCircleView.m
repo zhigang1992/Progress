@@ -43,7 +43,8 @@
 {
     CGFloat raidus = MIN(CGRectGetHeight(self.frame), CGRectGetWidth(self.frame)) /2;
     CGPoint offSet = CGPointMake((point.x - raidus)/raidus, (point.y - raidus)/raidus);
-    return offSet.x * offSet.x + offSet.y * offSet.y <= 1.f;
+    BOOL inside = offSet.x * offSet.x + offSet.y * offSet.y <= 1.f;
+    return inside;
 }
 
 - (void)updateStrokeColorsWithTopColorAndButtomColor{
@@ -82,6 +83,14 @@
     }
 }
 
+- (void)setHighlighted:(BOOL)highlighted
+{
+    if (_highlighted != highlighted) {
+        _highlighted = highlighted;
+        [self setNeedsDisplay];
+    }
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -92,8 +101,8 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
-    UIColor* topColor = self.topColor;
-    UIColor* buttomColor = self.buttomColor;
+    UIColor* topColor = self.highlighted ? self.buttomColor : self.topColor;
+    UIColor* buttomColor = self.highlighted ? self.topColor : self.buttomColor;
     
     UIColor* strokeColor = self.strokeColor;
     UIColor* strokeLight = self.strokeColorLight;
@@ -132,6 +141,12 @@
     //// Cleanup
     CGGradientRelease(blueButtonGradients);
     CGColorSpaceRelease(colorSpace);
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    self.highlighted = !self.highlighted;
 }
 
 @end
