@@ -35,7 +35,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [UIView animateWithDuration:0.5 delay:2 usingSpringWithDamping:0.5 initialSpringVelocity:0.3 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+    [UIView animateWithDuration:5 delay:2 usingSpringWithDamping:0.5 initialSpringVelocity:0.3 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
         self.dropDownHeightConstraint.constant = 370.f;
         [self.contentViewForClipingBounds layoutIfNeeded];
     } completion:^(BOOL finished) {

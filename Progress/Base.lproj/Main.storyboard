@@ -290,12 +290,23 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHC-kt-Oic">
+                                                                <rect key="frame" x="0.0" y="290" width="300" height="160"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="J4b-F0-iwU"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="centerX" secondItem="P7K-cs-j9F" secondAttribute="centerX" id="3Ne-79-1Ha"/>
+                                                            <constraint firstItem="uHC-kt-Oic" firstAttribute="leading" secondItem="wfb-el-Dr3" secondAttribute="leading" id="9B6-t3-e1L"/>
+                                                            <constraint firstAttribute="bottom" secondItem="uHC-kt-Oic" secondAttribute="bottom" id="I6a-gL-pbm"/>
                                                             <constraint firstAttribute="height" constant="450" id="QPf-DH-GG8"/>
                                                             <constraint firstAttribute="centerY" secondItem="P7K-cs-j9F" secondAttribute="centerY" id="VjJ-L6-eli"/>
+                                                            <constraint firstAttribute="trailing" secondItem="uHC-kt-Oic" secondAttribute="trailing" id="tub-eg-KHM"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNl-Z2-x51" userLabel="BottomLine" customClass="KFOnePixelLine">
@@ -547,7 +558,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="320" height="568"/>
         <image name="Background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
