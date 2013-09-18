@@ -30,6 +30,8 @@
 		04ADCC2817E94F06005AD272 /* KFGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ADCC2717E94F06005AD272 /* KFGradientView.m */; };
 		04ADCC2B17E95445005AD272 /* KFArrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ADCC2A17E95445005AD272 /* KFArrawLineView.m */; };
 		04ADCC2E17E98EA4005AD272 /* KFCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ADCC2D17E98EA4005AD272 /* KFCircleView.m */; };
+		04ADCC3117E99C86005AD272 /* KFProgressCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ADCC3017E99C86005AD272 /* KFProgressCircleView.m */; };
+		04ADCC3417E99CD6005AD272 /* KFContentViewForDrawContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04ADCC3317E99CD6005AD272 /* KFContentViewForDrawContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		04ADCC2A17E95445005AD272 /* KFArrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFArrawLineView.m; sourceTree = "<group>"; };
 		04ADCC2C17E98EA4005AD272 /* KFCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFCircleView.h; sourceTree = "<group>"; };
 		04ADCC2D17E98EA4005AD272 /* KFCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFCircleView.m; sourceTree = "<group>"; };
+		04ADCC2F17E99C86005AD272 /* KFProgressCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFProgressCircleView.h; sourceTree = "<group>"; };
+		04ADCC3017E99C86005AD272 /* KFProgressCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFProgressCircleView.m; sourceTree = "<group>"; };
+		04ADCC3217E99CD6005AD272 /* KFContentViewForDrawContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFContentViewForDrawContentView.h; sourceTree = "<group>"; };
+		04ADCC3317E99CD6005AD272 /* KFContentViewForDrawContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFContentViewForDrawContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,29 +145,33 @@
 		04A33BB517E8777B00A4BACD /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				04A33BC117E8777B00A4BACD /* Main.storyboard */,
+				04A33BC417E8777B00A4BACD /* KFViewController.h */,
+				04A33BC517E8777B00A4BACD /* KFViewController.m */,
 				043B19B017E87BCB0074ACDC /* KFSideViewController.h */,
 				043B19B117E87BCB0074ACDC /* KFSideViewController.m */,
-				043397A017E89AD6003613CB /* KFOnePixelLine.h */,
-				043397A117E89AD6003613CB /* KFOnePixelLine.m */,
-				04ADCC2617E94F06005AD272 /* KFGradientView.h */,
-				04ADCC2717E94F06005AD272 /* KFGradientView.m */,
 				0433979417E87D88003613CB /* KFActivityViewController.h */,
 				0433979517E87D88003613CB /* KFActivityViewController.m */,
 				0433979717E87DB8003613CB /* KFEgentViewController.h */,
 				0433979817E87DB8003613CB /* KFEgentViewController.m */,
 				0433979A17E87E19003613CB /* KFCenterViewController.h */,
 				0433979B17E87E19003613CB /* KFCenterViewController.m */,
-				04ADCC2917E95445005AD272 /* KFArrawLineView.h */,
-				04ADCC2A17E95445005AD272 /* KFArrawLineView.m */,
-				04ADCC2C17E98EA4005AD272 /* KFCircleView.h */,
-				04ADCC2D17E98EA4005AD272 /* KFCircleView.m */,
 				0433979D17E88DF1003613CB /* KFBaseViewController.h */,
 				0433979E17E88DF1003613CB /* KFBaseViewController.m */,
+				04ADCC2917E95445005AD272 /* KFArrawLineView.h */,
+				04ADCC2A17E95445005AD272 /* KFArrawLineView.m */,
+				043397A017E89AD6003613CB /* KFOnePixelLine.h */,
+				043397A117E89AD6003613CB /* KFOnePixelLine.m */,
+				04ADCC2617E94F06005AD272 /* KFGradientView.h */,
+				04ADCC2717E94F06005AD272 /* KFGradientView.m */,
+				04ADCC2C17E98EA4005AD272 /* KFCircleView.h */,
+				04ADCC2D17E98EA4005AD272 /* KFCircleView.m */,
+				04ADCC2F17E99C86005AD272 /* KFProgressCircleView.h */,
+				04ADCC3017E99C86005AD272 /* KFProgressCircleView.m */,
+				04ADCC3217E99CD6005AD272 /* KFContentViewForDrawContentView.h */,
+				04ADCC3317E99CD6005AD272 /* KFContentViewForDrawContentView.m */,
 				04A33BBE17E8777B00A4BACD /* KFAppDelegate.h */,
 				04A33BBF17E8777B00A4BACD /* KFAppDelegate.m */,
-				04A33BC117E8777B00A4BACD /* Main.storyboard */,
-				04A33BC417E8777B00A4BACD /* KFViewController.h */,
-				04A33BC517E8777B00A4BACD /* KFViewController.m */,
 				04A33BC717E8777B00A4BACD /* Images.xcassets */,
 				04A33BB617E8777B00A4BACD /* Supporting Files */,
 			);
@@ -296,9 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0433979617E87D88003613CB /* KFActivityViewController.m in Sources */,
+				04ADCC3417E99CD6005AD272 /* KFContentViewForDrawContentView.m in Sources */,
 				043397A217E89AD6003613CB /* KFOnePixelLine.m in Sources */,
 				04ADCC2B17E95445005AD272 /* KFArrawLineView.m in Sources */,
 				0433979C17E87E19003613CB /* KFCenterViewController.m in Sources */,
+				04ADCC3117E99C86005AD272 /* KFProgressCircleView.m in Sources */,
 				04A33BC617E8777B00A4BACD /* KFViewController.m in Sources */,
 				04A33BBC17E8777B00A4BACD /* main.m in Sources */,
 				04ADCC2817E94F06005AD272 /* KFGradientView.m in Sources */,

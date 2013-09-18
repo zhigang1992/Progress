@@ -453,7 +453,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-Bo-NBN" customClass="KFCircleView">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpU-Bo-NBN" userLabel="Main Circle View" customClass="KFProgressCircleView">
                                                                 <rect key="frame" x="70" y="62" width="180" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.1764705882" green="0.49019607840000001" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -471,9 +471,12 @@
                                                                     <userDefinedRuntimeAttribute type="point" keyPath="centerInset">
                                                                         <point key="value" x="10" y="10"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                                        <color key="value" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-4Q-zlZ" customClass="KFCircleView">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-4Q-zlZ" userLabel="Activity Circle View" customClass="KFCircleView">
                                                                 <rect key="frame" x="20" y="240" width="75" height="75"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.5490196078431373" green="0.80784313725490198" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -493,7 +496,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh6-hL-4Ia" customClass="KFCircleView">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh6-hL-4Ia" userLabel="Egent Circle View" customClass="KFCircleView">
                                                                 <rect key="frame" x="225" y="240" width="75" height="75"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.96470588235294119" green="0.41960784313725491" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -516,14 +519,17 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="ZpU-Bo-NBN" firstAttribute="top" secondItem="yFM-If-Jyn" secondAttribute="top" constant="62" id="G4e-9w-u7E"/>
+                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FFF-4Q-zlZ" secondAttribute="bottom" constant="10" id="A64-uF-j3e"/>
+                                                            <constraint firstItem="ZpU-Bo-NBN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yFM-If-Jyn" secondAttribute="top" constant="10" id="DMp-2W-HVi"/>
+                                                            <constraint firstItem="FFF-4Q-zlZ" firstAttribute="centerY" secondItem="Yh6-hL-4Ia" secondAttribute="centerY" id="Et3-JQ-KoB"/>
+                                                            <constraint firstItem="ZpU-Bo-NBN" firstAttribute="top" secondItem="yFM-If-Jyn" secondAttribute="top" priority="256" constant="62" id="G4e-9w-u7E"/>
+                                                            <constraint firstItem="FFF-4Q-zlZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZpU-Bo-NBN" secondAttribute="bottom" constant="-2" id="KK0-Xo-t4t"/>
                                                             <constraint firstAttribute="trailing" secondItem="hxN-UN-opY" secondAttribute="trailing" id="dK1-Vb-moE"/>
                                                             <constraint firstItem="hxN-UN-opY" firstAttribute="top" secondItem="yFM-If-Jyn" secondAttribute="top" id="dsp-NN-09X"/>
                                                             <constraint firstAttribute="centerX" secondItem="ZpU-Bo-NBN" secondAttribute="centerX" id="eO7-mZ-OMR"/>
                                                             <constraint firstItem="hxN-UN-opY" firstAttribute="leading" secondItem="yFM-If-Jyn" secondAttribute="leading" id="gmD-Ns-sUj"/>
-                                                            <constraint firstAttribute="bottom" secondItem="FFF-4Q-zlZ" secondAttribute="bottom" constant="60" id="jQ4-FW-yp2"/>
+                                                            <constraint firstAttribute="bottom" secondItem="FFF-4Q-zlZ" secondAttribute="bottom" priority="255" constant="60" id="jQ4-FW-yp2"/>
                                                             <constraint firstAttribute="trailing" secondItem="Yh6-hL-4Ia" secondAttribute="trailing" constant="20" id="saT-TO-Fb8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Yh6-hL-4Ia" secondAttribute="bottom" constant="60" id="uHT-Rg-EBi"/>
                                                             <constraint firstItem="FFF-4Q-zlZ" firstAttribute="leading" secondItem="yFM-If-Jyn" secondAttribute="leading" constant="20" id="vkM-IJ-9wm"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -615,6 +621,7 @@
                         <outlet property="dropDownView" destination="fnP-Ye-3P2" id="zCo-fi-tLV"/>
                         <outlet property="mainContentView" destination="v79-kw-9sf" id="wPB-CI-cmg"/>
                         <outlet property="mainContentViewHeightConstraint" destination="xGU-Fx-EYP" id="bmB-qH-X2j"/>
+                        <outlet property="mainProgressView" destination="ZpU-Bo-NBN" id="Iv8-lX-460"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKt-bs-LhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -660,7 +667,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="320" height="568"/>
         <image name="Background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

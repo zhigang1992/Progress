@@ -7,6 +7,7 @@
 //
 
 #import "KFCenterViewController.h"
+#import "KFProgressCircleView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface KFCenterViewController () <UIGestureRecognizerDelegate>
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainContentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *contentViewForClipingBounds;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dropDownHeightConstraint;
+@property (weak, nonatomic) IBOutlet KFProgressCircleView *mainProgressView;
 @property (nonatomic, getter = isShowingDropDownView) BOOL showingDropDownView;
 @end
 
@@ -41,6 +43,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.mainProgressView.progress = 0.4f;
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +82,7 @@
         }
     }
     
+    CGFloat dropDownViewThroughtHold = CGRectGetHeight(self.mainContentView.frame) - 38;
     
     
     switch (gesture.state) {
@@ -88,7 +96,7 @@
             CGPoint transition = [gesture translationInView:self.view];
             CGFloat drapViewHeight;
             if ([self isShowingDropDownView]) {
-                drapViewHeight = 370.f;
+                drapViewHeight = dropDownViewThroughtHold;
                 if (transition.y > 0) {
                     drapViewHeight += transition.y / 3.f;
                 }
@@ -97,8 +105,8 @@
                 }
             }
             else {
-                if (transition.y > 370.f) {
-                    drapViewHeight = 370.f + (transition.y - 370.f) / 3.f;
+                if (transition.y > dropDownViewThroughtHold) {
+                    drapViewHeight = dropDownViewThroughtHold + (transition.y - dropDownViewThroughtHold) / 3.f;
                 } else {
                     drapViewHeight = transition.y;
                 }
@@ -114,10 +122,10 @@
             
             BOOL shouldShowDropDownView = velocity.y > 0;// || self.dropDownHeightConstraint.constant > 370.f/2.f;
 
-            NSTimeInterval duration = shouldShowDropDownView ? fabs((370.f - self.dropDownHeightConstraint.constant) / 740.f) : self.dropDownHeightConstraint.constant / 740.f;
+            NSTimeInterval duration = shouldShowDropDownView ? fabs((dropDownViewThroughtHold - self.dropDownHeightConstraint.constant) / (dropDownViewThroughtHold * 2.f)) : self.dropDownHeightConstraint.constant / (dropDownViewThroughtHold * 2.f);
             
-            [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:1 initialSpringVelocity:fabs(velocity.y / 740.f) options:0 animations:^{
-                self.dropDownHeightConstraint.constant = shouldShowDropDownView ? 370.f : 0.f;
+            [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:1 initialSpringVelocity:fabs(velocity.y / dropDownViewThroughtHold * 2.f) options:0 animations:^{
+                self.dropDownHeightConstraint.constant = shouldShowDropDownView ? dropDownViewThroughtHold : 0.f;
                 [self.contentViewForClipingBounds layoutIfNeeded];
             } completion:^(BOOL finished) {
                 self.showingDropDownView = shouldShowDropDownView;

@@ -106,7 +106,7 @@
     CGGradientRef blueButtonGradients = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)blueButtonGradientsColors, blueButtonGradientsLocations);
     
     //// Background Drawing
-    UIBezierPath* backgroundPath = [UIBezierPath bezierPathWithOvalInRect: CGRectInset(rect, 1, 1)];
+    UIBezierPath* backgroundPath = [UIBezierPath bezierPathWithOvalInRect: CGRectInset(rect, 0.25, 0.25)];
     [[UIColor whiteColor] setFill];
     [backgroundPath fill];
     [strokeLight setStroke];
