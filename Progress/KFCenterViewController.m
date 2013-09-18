@@ -104,7 +104,6 @@
                 }
             }
             self.dropDownHeightConstraint.constant = MIN(450, MAX(0, drapViewHeight));
-            NSLog(@"trasition:%@\n velocity:%@", NSStringFromCGPoint(transition), NSStringFromCGPoint([gesture velocityInView:self.view]));
             break;
         }
         case UIGestureRecognizerStateEnded:
