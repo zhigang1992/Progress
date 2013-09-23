@@ -14,6 +14,7 @@
 		0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433979E17E88DF1003613CB /* KFBaseViewController.m */; };
 		043397A217E89AD6003613CB /* KFOnePixelLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 043397A117E89AD6003613CB /* KFOnePixelLine.m */; };
 		043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B19B117E87BCB0074ACDC /* KFSideViewController.m */; };
+		043F584E17ED5733001C0038 /* KFSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043F584D17ED5733001C0038 /* KFSegmentView.m */; };
 		0441F38617E9BC4700DB62EE /* KFRemindesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */; };
 		04A33BB017E8777B00A4BACD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BAF17E8777B00A4BACD /* Foundation.framework */; };
 		04A33BB217E8777B00A4BACD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A33BB117E8777B00A4BACD /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		043397A117E89AD6003613CB /* KFOnePixelLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFOnePixelLine.m; sourceTree = "<group>"; };
 		043B19B017E87BCB0074ACDC /* KFSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFSideViewController.h; sourceTree = "<group>"; };
 		043B19B117E87BCB0074ACDC /* KFSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFSideViewController.m; sourceTree = "<group>"; };
+		043F584C17ED5733001C0038 /* KFSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFSegmentView.h; sourceTree = "<group>"; };
+		043F584D17ED5733001C0038 /* KFSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFSegmentView.m; sourceTree = "<group>"; };
 		0441F38417E9BC4700DB62EE /* KFRemindesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFRemindesViewController.h; sourceTree = "<group>"; };
 		0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFRemindesViewController.m; sourceTree = "<group>"; };
 		04A33BAC17E8777B00A4BACD /* Progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +158,8 @@
 				041E5AB717E9F91200D6EBC9 /* UIView+KFView.m */,
 				0441F38417E9BC4700DB62EE /* KFRemindesViewController.h */,
 				0441F38517E9BC4700DB62EE /* KFRemindesViewController.m */,
+				043F584C17ED5733001C0038 /* KFSegmentView.h */,
+				043F584D17ED5733001C0038 /* KFSegmentView.m */,
 				04A33BC117E8777B00A4BACD /* Main.storyboard */,
 				04A33BC417E8777B00A4BACD /* KFViewController.h */,
 				04A33BC517E8777B00A4BACD /* KFViewController.m */,
@@ -329,6 +334,7 @@
 				0433979F17E88DF1003613CB /* KFBaseViewController.m in Sources */,
 				0433979917E87DB8003613CB /* KFEgentViewController.m in Sources */,
 				043B19B217E87BCB0074ACDC /* KFSideViewController.m in Sources */,
+				043F584E17ED5733001C0038 /* KFSegmentView.m in Sources */,
 				04A33BC017E8777B00A4BACD /* KFAppDelegate.m in Sources */,
 				04ADCC2E17E98EA4005AD272 /* KFCircleView.m in Sources */,
 			);

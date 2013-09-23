@@ -32,6 +32,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="960" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -491,6 +492,22 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFF-4Q-zlZ" userLabel="Activity Circle View" customClass="KFCircleView">
                                                                 <rect key="frame" x="20" y="240" width="75" height="75"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-mP-hYg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Label">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <color key="backgroundColor" red="0.5490196078431373" green="0.80784313725490198" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="75" id="T1l-DT-7xJ"/>
@@ -716,9 +733,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-KS-IIU" userLabel="FootView">
                                 <rect key="frame" x="0.0" y="500" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOf-ha-bir" customClass="KFSegmentView">
+                                        <rect key="frame" x="10" y="18" width="300" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5ho-US-xjo"/>
+                                            <constraint firstAttribute="height" constant="36" id="SqV-Xj-Yz5"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="firstTitle" value="Reminder" localized="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="secondTitle" value="Completed" localized="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="AGK-R8-4q8"/>
+                                    <constraint firstItem="nOf-ha-bir" firstAttribute="leading" secondItem="3sm-KS-IIU" secondAttribute="leading" constant="10" id="dVe-Hx-iKx"/>
+                                    <constraint firstItem="nOf-ha-bir" firstAttribute="top" secondItem="3sm-KS-IIU" secondAttribute="top" constant="18" id="iaK-Qu-KeM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -752,7 +786,9 @@
                     </view>
                     <connections>
                         <outlet property="buttomView" destination="3sm-KS-IIU" id="pd8-ur-nBx"/>
+                        <outlet property="reminderCompleteToggle" destination="nOf-ha-bir" id="m9f-GP-sGt"/>
                         <outlet property="tableView" destination="bq0-an-GKJ" id="VPQ-Cq-6Sh"/>
+                        <outlet property="tableViewContainerView" destination="Y8I-1u-TID" id="zRF-O9-XaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFF-ep-n3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -798,8 +834,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="320" height="568"/>
-        <image name="Background" width="320" height="568"/>
         <image name="Background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

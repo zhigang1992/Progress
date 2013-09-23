@@ -87,17 +87,23 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopViewOrButtomView:)]) {
-        return [self.delegate centerViewShouldShowTopViewOrButtomView:self];
+    CGPoint transition = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self.view];
+    if (fabs(transition.x) < fabs(transition.y)) {
+        if ([self.delegate respondsToSelector:@selector(centerViewShouldShowTopViewOrButtomView:)]) {
+            return [self.delegate centerViewShouldShowTopViewOrButtomView:self];
+        }
+        else {
+            return YES;
+        }
     }
     else {
-        return YES;
+        return NO;
     }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return YES;
+    return NO;
 }
 
 - (CGFloat)dropDownHight
